@@ -121,7 +121,7 @@ def reportCard(name,time,score,totalQuestions):
         file.write("Total Questions: "+totalQuestions)
 
         # Creating my percent variable
-        percent = score/totalQuestions*100
+        percent = int(score/totalQuestions*100)
         # Determining letter grade
         if percent >=90:
             letter = "A"
@@ -135,7 +135,7 @@ def reportCard(name,time,score,totalQuestions):
             letter = "F"
 
         # Writing to file...
-        file.write("Percentage: "+percent)
+        file.write("Percentage: "+percent+"%")
         file.write("Letter grade: "+letter)
         
         file.close() # Closing file
