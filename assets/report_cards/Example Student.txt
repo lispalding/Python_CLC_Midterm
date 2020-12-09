@@ -1,0 +1,7 @@
+Name: Example Student
+Time test was started: 2020-12-08 21:31:52.838796
+End Time: 12/08/2020 21:31:52
+Score (Total correct): 5
+Total Questions: 22
+Percentage: 22%
+Letter grade: F

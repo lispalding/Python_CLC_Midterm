@@ -1,8 +1,177 @@
-TEST CREATOR: Lisette Spalding !! CLASS//HOUR: Python/5-6
-category
-choice 1
-choice 2
-choice 3
-choice 4
+TEST CREATOR: Lisette Spalding !! CLASS | HOUR: Python | 5-6
+/ PYTHON QUESTION #1: Errors.
+What is not a general type of error you can run into in Python?
+Syntax Errors
+Runtime Errors
+Runtime Exeptions
+Indent Error
+4
+An Indent Error is a type of Syntax Error. / A Runtime Error happens when your program has unexpected results, / even though it executes properly. / A Runtime Exeption happens when your program just stops running. / It happens when your program encounters an error, perhaps you're trying to do something that simply isn't possible. / / In short, I asked which one isn't a *generalized* category of Python errors.
+/ QUESTION #2: Classes.
+What is the correct code for a class named Levin Sword and a class function named special effect (Using camelcase)? / !! PLEASE PAY ATTENTION TO NAMING CONVENTIONS !!
+class LevinSword: /  		type = "sword" /  		defaultUses = 25 /  		hit = 0.9 /  		def specialEffect(): /  			stat = "Electrical Damage" /  			statHit = 0.7
+def LevinSword: /  		type = "sword" /  		defaultUses = 25 /  		hit = 0.9 /  		def special_Effect(): /  			stat = "Electrical Damage" /  			statHit = 0.7
+def levinSword: /  		type = "sword" /  		defaultUses = 25 /  		hit = 0.9 /  		class specialEffect(): /  			stat = "Electrical Damage" /  			statHit = 0.7
+class LevinSword: /  		type = "sword" /  		defaultUses = 25 /  		hit = 0.9 /  		def SpecialEffect(): /  			stat = "Electrical Damage" /  			statHit = 0.7
 1
-explination
+Answer number one maintains correct naming conventions, / as well as not using a mix of camelcase whichLooksLikeThis and underscore case which_looks_like_this. / Along with the correct naming conventions and style consistency, / answer one also maintians the correct keywords to start a class (Which is just "class") and to start a function (Which is def).
+/ PYTHON QUESTION #3: Coding Values.
+What is are the Boolean and String values?
+True and False.
+True and False. A line of text.
+Numbers.
+True and False. Numbers.
+2
+Booleans hold two values: True and false. A string, while it can hold numbers, is generally a line of text.
+/ PYTHON QUESTION #4: Code Debugging | Mistakes in code.
+Assume that you are writing a program, you want the program to loop until you get a good response. / One response (#4) is a informational option. / In the following code, what is the mistake? / def charCreate(): /   		options = ["Banker", "Carpenter", "Farmer", "Display Differences"] # Listing the menu options /   		userChoice = menuChoices(options) /   		while True: /   		# Defining what each choice will do! Becuase each choice affects the game. /   		if userChoice == 1: /   			prof = "Banker" /   			money = 1600 /   		return prof, money /   			break /   		if userChoice == 2: /   			prof = "Carpenter" /   			money = 800 /   			return prof /   			break /   		if userChoice == 3: /   			prof = "Farmer" /   			money = 400 /   			return prof, money /   		if userChoice == 4: /   			# This is the "Display Differences" option /   			print('''\n\t\tA banker is rich and has $1600. /   			\tA Carpenter is middle class and has $800. /   			\tA Farmer is poor and has $400.''') /   		else: /   			print("Sorry, that is not an option.")
+No errors.
+They forgot to break on the "Farmer" if statement. They also forgot to retrurn money during the "Carpenter" statement.
+They started a new if statement with each option. They also forgot to break the loop on "Farmer", returning money on "Carpenter". / They also forgot that the their userChoice option needs to be in the loop.
+They forgot to break the loop on "Farmer", returning money on "Carpenter". / They also forgot that the their userChoice option needs to be in the loop.
+3
+In short: / If you don't have the "userChoice = menuChoices(options)" option in the while True loop then option number four (Informational) will loop indefinitally. / With the "if" statements, you need to start a new, but connected, statement with "elif". If you start a statement with "if" agian it will work, somewhat. / The problem is that your code, if something meets multiple pieces of criteria, will execute every statement that is contained within the multiple if statements. / The program will not work as expected. / The problem with the "Farmer statement" or the if userChoice == 3:, is that you forgot to break the loop. This will cause the farmer function to run indefinitely in the background. / The problem with the "Carpenter statement" (Or the if userChoice == 2:) is that you forgot to return the money. / While forgetting to return something won't "ultimately" ruin anything, process wisse. You just will not have an actually updated "money" variable.
+/ PYTHON QUESTION #5: Vocabulary.
+What is concatenation?
+A way to join strings together end-to-end to create a new string; does includes spaces.
+A way to join strings together end-to-end to create a new string; does not include spaces
+A way to join two variables together
+A way to add numbers
+2
+Concatenation, while it uses a plus sign (+) as it's representative, does not add numbers. / It also doesn't combine two different variables, becuase it can only combine string values. It doesn't include spaces.
+/ PYTHON QUESTION #6: Python History.
+Who concieved Python?
+Bill Gates
+Linus Torvalds
+Grace Hopper
+Guido van Rossum
+4
+While Bill Gates created a better future for computers (With creating Microsoft), wasn't the one to create Python. / Linus Torvalds was the man to create the Linux kernel, not Python. / Grace Hopper found the first computer bug, and was involved in the development of COBOL. Not Python. / Guido van Rossum was the one to create Python.
+/ PYTHON QUESTION #7: Python Standards.
+What are Python's convention standards called?
+PSC
+PEP
+PIP
+PCS
+2
+Python's protocol standards are called PEP, which is short for: Python Enhancement Proposals. This is where we learned about naming conventions and the like.
+/ PYTHON QUESTION #8: Scope.
+What variable would be out of the scope of the following function? / nameFirst = "Bernadetta" / nameLast = "Varley" / def greetings(nameFirst): / 		nameLast = "Herving" / 		greeting = input("How will you greet",nameFirst,"Mr."+nameLast+"?")
+nameLast = "Varley"
+nameFirst = "Bernadetta"
+nameLast = "Herving"
+greeting = input("How will you greet",nameFirst,"Mr."+nameLast+"?")
+1
+nameLast = "Varley" would be out of the scope because it isn't defined with the "global" keyword, and it isn't passed into our function "greetings".
+/ PYTHON QUESTION #9: Comments & Doctypes.
+How would you define a doctype in Python?
+Under your defined function.
+Above your defined function.
+Under your defined function; with three quotation marks ("""""").
+Above your defined function; with three quotation marks ("""""").
+3
+After you define a function, you'll want to put your doctype under your function. / You'll want to have it indented under your function, and you'll need triple quotes in order for it to work. So a doctype would look like: / """ This function determines player name. To use: playerName(nameText) """
+/ PYTHON QUESTION #10: Loops.
+What does a "For" loop do?
+A "For" loop will loop through each value in a list or tuple.
+A "For" loop will loop through a block of code until the logical argument attached to it is satisfied.
+A "For" loop will loop until a "break" or "return" statement is made.
+A "For" loop will loop through a block of code until the logical argument attached to it is proved False.
+1
+A "For loop" will only work if it is looping through some sort of list or tuple. The syntax for a "For" loop looks like this: / for item in listName:
+/ PYTHON QUESTION #11: Comments & Doctypes.
+Which of the following is a good or valid comment?
+## Comment
+# Comment
+################# COMMENT #################
+All of the above.
+4
+A comment takes up only one line of code. As long as it starts with a hashtag, and is not in quotes, it will be considered a valid comment.
+/ PYTHON QUESTION #12: Python Output.
+What would the output of the following function look like (Assume that the input is the name Sora )? / def name(): / 	question = "What is your name?   " / 	name = input(question) / 	print(name)
+Sora
+"Sora"
+An Error Message
+["Sora"]
+1
+The variable "question" doesn't change the output. It is perfectly valid to put a variable into an input for the printed prompt.
+/ PYTHON QUESTION #13: Calling other .py files.
+How do you call a .py file that you have created in another program? / (Assume that the program you want to pull in is named example).
+import example.py
+import example
+import [PATH]example.py
+import [PATH]example
+2
+You do not need to specify the path of your import. You do not need to include the file extention when importing another program.
+/ PYTHON QUESTION #14: Loops.
+How useful is an unbroken "while True" loop and why?
+Useful, these loops will run indefinitally... A very useful quality.
+Not useful, these loops will run indefinitally; this slows down a computer and can even crash it.
+Not useful, these loops will only run until proven false.
+Useful. These loop will run until proven false.
+2
+Ultimately, you want to break your "while True" loops because they *will* slow down your program and computer. / They might even crash your program, or worse, your computer.
+/ PYTHON QUESTION #15: Comments and Doctypes.
+Why should you use comments and doctypes in your code?
+You should not, they're useless.
+They help you decipher what your code is doing and why you wrote your code the way that you did.
+They'll help you in the future when you look back on code that you've written.
+Both 2 & 3
+4
+Comments are a good idea, not only becuase you can use them to make your code look prettier, but you can use them to make sure that your code is fully functional. / They help you decide what you are doing with your code, and why you wrote something the way that you did. / Doctypes are much the same. They're generally used to describe a function, and you can detail how to use the function for future reference.
+/ PYTHON QUESTION #16: Naming.
+What is a proper name for an unchanging list?
+unchanging = []
+UNCHANGING = []
+Unchanging = []
+UnChAnGiNg = []
+2
+UNCHANGING would be the proper name. This is because unchanging lists and variables are defined with PEP to be all uppercase.
+/ PYTHON QUESTION #17: Naming.
+Why is it a good idea to use the Python naming conventions defined in the Python PEP?
+Because they help other programmers read your code AND figure out what you are doing with your code.
+You shouldn't follow them, becuase  it's funny to confuse other programmers.
+Because they help with code consistency.
+Both 1 & 3
+4
+This is a little self-explanitory if you read the answers.
+/ PYTHON QUESTION #18: Python History.
+What year was Python first available to the Public?
+1991
+1980
+2008
+2000
+1
+Python was first made available to the public in 1991. / 1980 was when Python was first concieved, first started being created. / 2008 was when Python 3.0 was released. / 2000 was when Python 2.0 was released.
+/ PYTHON QUESTION #19: Built-In Python Functions.
+How do you display text output to the screen?
+With the input() statement
+With the output() statement
+With the print() statement
+With the textOutput() statement
+3
+The output() statement and textOutput statement don't actually exist in the base build of Python. / I was asking how to display text output to the screen, not take user input.
+/ PYTHON QUESTION #20: Errors and troubleshooting.
+What does a Syntax Error mean?
+ALWAYS that you don't have correct indentation level.
+ALWAYS that you typed something in wrong.
+I don't know.
+Usually that you typed something in wrong... Typos.
+4
+I say four because a syntax error can be many things. It's just usually typos. It's not *ALWAYS* one thing or another.
+/ UNRELATED QUESTION #1: Video Games...
+In the popular video game Danganronpa: Trigger Happy Havoc, when the games weren't localized, what was Ishimaru Kiyotaka's ultimate talent? / (According to the once-popular "Walkthrough" on a fourm website).
+Ultimate Moral Compass
+Ultimate Hall Monitor
+Super High School Level (SHSL) Hall Monitor
+Super High School Level (SHSL) Moral Compass
+3
+In somethingawful forums, they translated Ishimaru's talent to be "Super High School Level Hall Monitor", or SHSL Hall Monitor for short. / FUN FACT: In the Japanese version of the game, Ishimaru's talent is something more akin to a hall monitor, with him being the "Ultimate/SHSL Disciplinary Committee Member". / However, in the english localization, they changed his talent to "Moral Compass".
+/ UNRELATED QUESTION #2: A Webcomic... And... Video game?
+In the once-popular webcomic Homestuck's currently published video game extention, Hiveswap, / what is one of Mallek Adalov's desires to do with his hacking?
+To look cool.
+Control all drones in massive quantity and create real impact on the brutal Alternian society.
+To start a rebellion.
+To fool others into thinking that he knows things he doesn't.
+2
+It is stated in Mallek's Hiveswap Friendsim route that this is one of his desires, given that Alternian society is exteremely harsh. /He would like to be able to control all of the drones on Alternia in order to make an impact on the cutthroat society, where drones are used as tools of oppression.

@@ -7,11 +7,12 @@
 
 # Imports
 import sys
+import os
 from datetime import datetime
 
 ################################## TEST VAR ###################################
 
-file = "example_test.txt" # You will need to change this variable to match the file name you're using
+file = "lisette_test.txt" # You will need to change this variable to match the file name you're using
 
 ##################################### FIN #####################################
 
@@ -20,12 +21,11 @@ file = "example_test.txt" # You will need to change this variable to match the f
 
 # Defining a function to open the test file
 def openFile(fileName,mode):
-    """ Opens and returns an open file with the given permissions. To Use: openFile(fileName,mode) """
-
+    """ Opens and returns an open file with the given permissions. To Use: openFile(fileName,mode) """    
     # Try block for errors
     try:
         # Opening a file...
-        file = open("assets/test_files/"+fileName,mode)
+        file = open("assets/"+fileName,mode)
     except IOError as e:
         # Only runs if there is an IO Error
         print("Unable to open the file",fileName+". Ending program... \n",e)
@@ -36,6 +36,8 @@ def openFile(fileName,mode):
             # Writing the error to error file
             file = open("assets/errors_log/error_log.txt","a")
             file.write(str(e)+" "+str(errorTime)+"\n")
+
+            file.close()
 
             # Getting user input for the system exit
             input("\n\n Presss the enter key to exit.")
@@ -106,19 +108,19 @@ def reportCard(name,time,score,totalQuestions):
     """ Creating a report card for the test taker. To use: reportCard(name,score,totalQuestions) """
     
     # Using a try block for errors
-    try:
+    try:        
         # Setting file variable
-        file = openFile("assets/report_cards/"+name,"w")
+        file = openFile("report_cards/"+name+".txt","w")
         # Getting current time
         time = datetime.now() # Getting the time
         endTime = time.strftime("%m/%d/%Y %H:%M:%S") # Making the time format readable
-
+        
         # Writing the file...
-        file.write("Name: "+name)
-        file.write("Time test was started: "+time)
-        file.write("End Time: "+endTime)
-        file.write("Score (Total correct): "+score)
-        file.write("Total Questions: "+totalQuestions)
+        file.write("Name: "+name+"\n")
+        file.write("Time test was started: "+str(time)+"\n")
+        file.write("End Time: "+str(endTime)+"\n")
+        file.write("Score (Total correct): "+str(score)+"\n")
+        file.write("Total Questions: "+str(totalQuestions)+"\n")
 
         # Creating my percent variable
         percent = int(score/totalQuestions*100)
@@ -135,9 +137,9 @@ def reportCard(name,time,score,totalQuestions):
             letter = "F"
 
         # Writing to file...
-        file.write("Percentage: "+percent+"%")
+        file.write("Percentage: "+str(percent)+"%"+"\n")
         file.write("Letter grade: "+letter)
-        
+
         file.close() # Closing file
     except:
         print("There was an error while writing the report card.")
@@ -153,7 +155,7 @@ def main(file):
     totalQuestions = 0
     
     name, time = getName() # Getting the name of the test taker
-    file = openFile(file,"r") # Opening the file
+    file = openFile("test_files/"+file,"r") # Opening the file
     title = nextLine(file) # Getting the title
     welcome(name,title,time) # Welcoming the test taker
     category,question,choices,correct,explination =  questionBlock(file) # Getting a ton of variables
